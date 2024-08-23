@@ -2,7 +2,7 @@ import Button from "./Button";
 
 function Navbar() {
   return (
-    <div className="max-w-screen-xl mx-auto py-6 border-b-gray-600 border-b flex items-center justify-between">
+    <nav className="max-w-screen-xl mx-auto py-6 border-b-gray-600 border-b flex items-center justify-between">
       <div className="navLeft flex items-center">
 
       <div className="img w-28 h-8 overflow-hidden">
@@ -31,7 +31,7 @@ function Navbar() {
       </div>
       </div>
       <Button/>
-    </div>
+    </nav>
   );
 }
 export default Navbar;
