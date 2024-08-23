@@ -37,10 +37,10 @@ function Work() {
       url: "https://cdn.prod.website-files.com/664dc8b6bc52b504509197f0/6697d53e25385e299ff4542b_Showcase%20-%2016%209%20(A).webp",
     },
   ];
-  console.log(images);
+  // console.log(images);
 
   return (
-    <section className="w-full">
+    <section className="w-full mt-10">
       <div className="max-w-screen-xl mx-auto text-center relative">
         <h1 className="text-[30vw] font-medium leading-none tracking-tight select-none">
           work
