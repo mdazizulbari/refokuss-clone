@@ -1,21 +1,21 @@
 import { IoIosArrowRoundForward } from "react-icons/io";
 
-function Card({ width, left, right, hover }) {
+function Card({ width, left, right, hover, h4, h5 }) {
   return (
     <div
       className={`${width} p-5 rounded-xl bg-gray-700 min-h-[30rem] flex flex-col justify-between ${hover}`}
     >
       <div className="w-full">
         <div className="w-full flex items-center justify-between">
-          <h3>one heading</h3>
+          <h5>{h5}</h5>
           <IoIosArrowRoundForward />
         </div>
-        <h2 className="mt-5 text-3xl font-medium">Whatever Heading</h2>
+        <h4 className="mt-5 text-3xl font-medium">{h4}</h4>
       </div>
       <div className="down w-full">
         {left && (
-          <p className="text-sm font-medium text-gray-500">
-            Lorem ipsum, dolor sit amet consectetur adipisicing.
+          <p className="text-sm font-medium text-gray-400">
+            Web Design, Webflow Development, and Creative Development.
           </p>
         )}
         {right && (
