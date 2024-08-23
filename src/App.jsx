@@ -1,3 +1,4 @@
+import Marquees from "./Components/Marquees"
 import Navbar from "./Components/Navbar"
 import Products from "./Components/Products"
 import Stripes from "./Components/Stripes"
@@ -10,6 +11,7 @@ function App() {
       <Work/>
       <Stripes/>
       <Products/>
+      <Marquees/>
     </div>
   )
 }
