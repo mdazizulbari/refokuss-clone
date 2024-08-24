@@ -19,7 +19,7 @@ function Cards() {
           width={"basis-2/3"}
           left={false}
           right={true}
-          hover={"hover:bg-violet-600"}
+          hover= {true}
           h5={"GET IN TOUCH"}
           h4={
             <>
