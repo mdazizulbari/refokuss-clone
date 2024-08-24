@@ -52,6 +52,7 @@ function Work() {
             (element, index) =>
               element.isActive && (
                 <img
+                  key={index}
                   src={element.url}
                   className="w-80 rounded-xl absolute -translate-x-1/2 -translate-y-1/2"
                   style={{ top: element.top, left: element.left }}
