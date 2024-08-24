@@ -1,7 +1,8 @@
-import { motion } from "framer-motion";
+import { motion, useMotionValueEvent, useScroll } from "framer-motion";
+import { useState } from "react";
 
 function Work() {
-  var images = [
+  const [images, setImages] = useState([
     {
       top: "50%",
       left: "50%",
@@ -38,11 +39,46 @@ function Work() {
       isActive: false,
       url: "https://cdn.prod.website-files.com/664dc8b6bc52b504509197f0/6697d53e25385e299ff4542b_Showcase%20-%2016%209%20(A).webp",
     },
-  ];
-  // console.log(images);
+  ]);
+
+  const { scrollYProgress } = useScroll();
+  scrollYProgress.on("change", (data) => {
+    function imageShow(array) {
+      setImages((previousState) =>
+        previousState.map((item, index) =>
+          array.indexOf(index) === -1
+            ? { ...item, isActive: false }
+            : { ...item, isActive: true }
+        )
+      );
+    }
+    switch (Math.floor(data * 100)) {
+      case 0:
+        imageShow([]);
+        break;
+      case 1:
+        imageShow([0]);
+        break;
+      case 3:
+        imageShow([0, 1]);
+        break;
+      case 5:
+        imageShow([0, 1, 2]);
+        break;
+      case 7:
+        imageShow([0, 1, 2, 3]);
+        break;
+      case 9:
+        imageShow([0, 1, 2, 3, 4]);
+        break;
+      case 11:
+        imageShow([0, 1, 2, 3, 4, 5]);
+        break;
+    }
+  });
 
   return (
-    <section className="w-full mt-10">
+    <section className="w-full mt-32">
       <div className="max-w-screen-xl mx-auto text-center relative">
         <h1 className="text-[30vw] font-medium leading-none tracking-tight select-none">
           work

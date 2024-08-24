@@ -11,7 +11,7 @@ function Stripes() {
   ];
 
   return (
-    <div className="h-24 mt-20 flex items-center border-t border-b border-gray-600">
+    <div className="h-16 mt-20 flex items-center border-t border-b border-gray-600">
       {data.map((element, index) => (
         <Stripe key={index} value={element} />
       ))}
