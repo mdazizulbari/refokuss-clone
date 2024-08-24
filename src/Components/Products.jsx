@@ -1,4 +1,6 @@
+import { useState, useEffect, useRef } from "react";
 import Product from "./Product";
+import { motion } from "framer-motion";
 
 function Products() {
   var products = [
@@ -53,11 +55,78 @@ function Products() {
     },
   ];
 
+  const videoRef = useRef(null);
+
+  useEffect(() => {
+    if (videoRef.current) {
+      videoRef.current
+        .play()
+        .catch((error) => console.log("Autoplay failed:", error));
+    }
+  }, []);
+  const [position, setPosition] = useState(0);
+  const mover = (value) => {
+    setPosition(value * 23);
+  };
+
   return (
-    <div className="mt-32">
+    <div className="mt-32 relative">
       {products.map((value, index) => (
-        <Product value={value} key={index} />
+        <Product value={value} mover={mover} count={index} key={index} />
       ))}
+      <div className="w-full h-full absolute top-0 pointer-events-none">
+        <motion.div
+          initial={{ y: position, x: "-50%" }}
+          animate={{ y: position + `rem` }}
+          transition={{ ease: [0.76, 0, 0.24, 1], duration: 0.6 }}
+          className="windwo w-[32rem] h-[23rem] absolute left-[44%] overflow-hidden bg-white"
+        >
+          <motion.div
+            animate={{ y: -position + `rem` }}
+            transition={{ ease: [0.76, 0, 0.24, 1], duration: 0.5 }}
+            className="w-full h-full bg-blue-100"
+          >
+            <video
+              ref={videoRef}
+              className="w-full h-full object-cover"
+              autoplay
+              muted
+              loop
+              src="https://files.refokus.com/storage/v1/object/public/Portfolio%20Videos/cula-169.webm"
+            ></video>
+          </motion.div>
+          <motion.div
+            animate={{ y: -position + `rem` }}
+            transition={{ ease: [0.76, 0, 0.24, 1], duration: 0.5 }}
+            className="w-full h-full bg-blue-200"
+          ></motion.div>
+          <motion.div
+            animate={{ y: -position + `rem` }}
+            transition={{ ease: [0.76, 0, 0.24, 1], duration: 0.5 }}
+            className="w-full h-full bg-blue-300"
+          ></motion.div>
+          <motion.div
+            animate={{ y: -position + `rem` }}
+            transition={{ ease: [0.76, 0, 0.24, 1], duration: 0.5 }}
+            className="w-full h-full bg-blue-400"
+          ></motion.div>
+          <motion.div
+            animate={{ y: -position + `rem` }}
+            transition={{ ease: [0.76, 0, 0.24, 1], duration: 0.5 }}
+            className="w-full h-full bg-blue-500"
+          ></motion.div>
+          <motion.div
+            animate={{ y: -position + `rem` }}
+            transition={{ ease: [0.76, 0, 0.24, 1], duration: 0.5 }}
+            className="w-full h-full bg-blue-600"
+          ></motion.div>
+          <motion.div
+            animate={{ y: -position + `rem` }}
+            transition={{ ease: [0.76, 0, 0.24, 1], duration: 0.5 }}
+            className="w-full h-full bg-blue-700"
+          ></motion.div>
+        </motion.div>
+      </div>
     </div>
   );
 }

@@ -1,9 +1,15 @@
 import Button from "./Button";
 
-function Product({ value }) {
+function Product({ value, mover, count }) {
+
   return (
-    <section className="w-full py-20 text-white">
-      <div className="max-w-screen-xl mx-auto flex items-center justify-between">
+    <section className="w-full h-[23rem] py-20 text-white">
+      <div
+        onMouseEnter={() => {
+          mover(count);
+        }}
+        className="max-w-screen-xl mx-auto flex items-center justify-between"
+      >
         <h1 className="text-6xl font-medium">{value.title}</h1>
         <div className="detailes w-1/3">
           <p className="mb-10">{value.description}</p>
