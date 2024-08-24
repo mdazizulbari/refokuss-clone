@@ -1,3 +1,5 @@
+import { motion } from "framer-motion";
+
 function Work() {
   var images = [
     {
@@ -47,15 +49,15 @@ function Work() {
         </h1>
         <div className="w-full h-full absolute top-0">
           {images.map(
-            (element, index) => 
-            element.isActive && (
-              <img
-                src={element.url}
-                className="w-80 rounded-xl absolute -translate-x-1/2 -translate-y-1/2"
-                style={{ top: element.top, left: element.left }}
-                alt=""
-              />
-            )
+            (element, index) =>
+              element.isActive && (
+                <img
+                  src={element.url}
+                  className="w-80 rounded-xl absolute -translate-x-1/2 -translate-y-1/2"
+                  style={{ top: element.top, left: element.left }}
+                  alt=""
+                />
+              )
           )}
         </div>
       </div>
