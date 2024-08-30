@@ -8,6 +8,7 @@ function Products() {
       title: "Cula",
       live: true,
       case: true,
+      bgcolor: "bg-[#3b4656]",
       description:
         "We immersed ourselves in a 3D world we created to explain how Cula's platform collects data from carbon removal processes and converts them into carbon credit certificates.",
     },
@@ -15,6 +16,7 @@ function Products() {
       title: "Arqitel",
       live: true,
       case: false,
+      bgcolor: "bg-[#]",
       description:
         "With a continuous 3D animation, we showcase Arqitel's approach and show how migration data translates into real estate.",
     },
@@ -72,14 +74,14 @@ function Products() {
   return (
     <div className="mt-32 relative">
       {products.map((value, index) => (
-        <Product value={value} mover={mover} count={index} key={index} />
+        <Product value={value} mover={mover} count={index} key={index} bgcolor={value.bgcolor} />
       ))}
       <div className="w-full h-full absolute top-0 pointer-events-none">
         <motion.div
           initial={{ y: position, x: "-50%" }}
           animate={{ y: position + `rem` }}
           transition={{ ease: [0.76, 0, 0.24, 1], duration: 0.6 }}
-          className="windwo w-[32rem] h-[23rem] absolute left-[44%] overflow-hidden bg-white"
+          className="windwo w-[32rem] h-[23rem] absolute left-[44%] rounded-3xl overflow-hidden bg-white"
         >
           <motion.div
             animate={{ y: -position + `rem` }}
@@ -89,42 +91,96 @@ function Products() {
             <video
               ref={videoRef}
               className="w-full h-full object-cover"
-              autoplay
+              autoPlay
               muted
               loop
-              src="https://files.refokus.com/storage/v1/object/public/Portfolio%20Videos/cula-169.webm"
+              src="https://files.refokus.com/storage/v1/object/public/Portfolio%20Videos/cula-43.webm"
             ></video>
           </motion.div>
           <motion.div
             animate={{ y: -position + `rem` }}
             transition={{ ease: [0.76, 0, 0.24, 1], duration: 0.5 }}
             className="w-full h-full bg-blue-200"
-          ></motion.div>
+          >
+            <video
+              ref={videoRef}
+              className="w-full h-full object-cover"
+              autoPlay
+              muted
+              loop
+              src="https://files.refokus.com/storage/v1/object/public/Portfolio%20Videos/arqitel-43.webm"
+            ></video>
+          </motion.div>
           <motion.div
             animate={{ y: -position + `rem` }}
             transition={{ ease: [0.76, 0, 0.24, 1], duration: 0.5 }}
             className="w-full h-full bg-blue-300"
-          ></motion.div>
+          >
+            <video
+              ref={videoRef}
+              className="w-full h-full object-cover"
+              autoPlay
+              muted
+              loop
+              src="https://files.refokus.com/storage/v1/object/public/Portfolio%20Videos/bcgp-43.webm"
+            ></video>
+          </motion.div>
           <motion.div
             animate={{ y: -position + `rem` }}
             transition={{ ease: [0.76, 0, 0.24, 1], duration: 0.5 }}
             className="w-full h-full bg-blue-400"
-          ></motion.div>
+          >
+            <video
+              ref={videoRef}
+              className="w-full h-full object-cover"
+              autoPlay
+              muted
+              loop
+              src="https://files.refokus.com/storage/v1/object/public/Portfolio%20Videos/yir2021-43.webm"
+            ></video>
+          </motion.div>
           <motion.div
             animate={{ y: -position + `rem` }}
             transition={{ ease: [0.76, 0, 0.24, 1], duration: 0.5 }}
             className="w-full h-full bg-blue-500"
-          ></motion.div>
+          >
+            <video
+              ref={videoRef}
+              className="w-full h-full object-cover"
+              autoPlay
+              muted
+              loop
+              src="https://files.refokus.com/storage/v1/object/public/Portfolio%20Videos/yir2022-43.webm"
+            ></video>
+          </motion.div>
           <motion.div
             animate={{ y: -position + `rem` }}
             transition={{ ease: [0.76, 0, 0.24, 1], duration: 0.5 }}
             className="w-full h-full bg-blue-600"
-          ></motion.div>
+          >
+            <video
+              ref={videoRef}
+              className="w-full h-full object-cover"
+              autoPlay
+              muted
+              loop
+              src="https://files.refokus.com/storage/v1/object/public/Portfolio%20Videos/jungle-43.webm"
+            ></video>
+          </motion.div>
           <motion.div
             animate={{ y: -position + `rem` }}
             transition={{ ease: [0.76, 0, 0.24, 1], duration: 0.5 }}
             className="w-full h-full bg-blue-700"
-          ></motion.div>
+          >
+            <video
+              ref={videoRef}
+              className="w-full h-full object-cover"
+              autoPlay
+              muted
+              loop
+              src="https://files.refokus.com/storage/v1/object/public/Portfolio%20Videos/showcasej-43.webm"
+            ></video>
+          </motion.div>
         </motion.div>
       </div>
     </div>

@@ -1,9 +1,9 @@
 import Button from "./Button";
 
-function Product({ value, mover, count }) {
+function Product({ value, mover, count, bgcolor }) {
 
   return (
-    <section className="w-full h-[23rem] py-20 text-white">
+    <section className={`w-full h-[23rem] py-20 text-white ${bgcolor}`}>
       <div
         onMouseEnter={() => {
           mover(count);
