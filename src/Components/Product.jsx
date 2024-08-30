@@ -1,9 +1,14 @@
+import { motion } from "framer-motion";
 import Button from "./Button";
 
 function Product({ value, mover, count, bgcolor }) {
 
   return (
-    <section className={`w-full h-[23rem] py-20 text-white ${bgcolor}`}>
+    <motion.section
+    whileHover={{
+      backgroundColor: bgcolor
+    }}
+     className={`w-full h-[23rem] py-20 text-white ${bgcolor}`}>
       <div
         onMouseEnter={() => {
           mover(count);
@@ -19,7 +24,7 @@ function Product({ value, mover, count, bgcolor }) {
           </div>
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 }
 export default Product;
